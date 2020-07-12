@@ -7,27 +7,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="default.css">
 </head>
-<body>
-    <header><div id="progress"></div>
-        <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navigation">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-            
-            <div id="navigation" class="navbar-menu">
-                <div class="navbar-end is-uppercase is-size-5">
-                    <a href="#home" class="navbar-item ml-4">Accueil</a>
-                    <a href="#about" class="navbar-item ml-4">À propos</a>
-                    <a href="#skills" class="navbar-item ml-4">Compétences</a>
-                    <a href="#portfolio" class="navbar-item ml-4">portfolio</a>
-                    <a href="#contact" class="navbar-item ml-4">contact</a>
+<body ><div id="particles-js"></div>
+    <header>
+        
+        <div id="progress"></div>
+        
+            <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navigation">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
                 </div>
-            </div>
-        </nav>
+                
+                <div id="navigation" class="navbar-menu">
+                    <div class="navbar-end is-uppercase is-size-5">
+                        <a href="#home" class="navbar-item ml-4">Accueil</a>
+                        <a href="#about" class="navbar-item ml-4">À propos</a>
+                        <a href="#skills" class="navbar-item ml-4">Compétences</a>
+                        <a href="#portfolio" class="navbar-item ml-4">portfolio</a>
+                        <a href="#contact" class="navbar-item ml-4">contact</a>
+                    </div>
+                </div>
+            </nav>
     </header>
     <main>
         <section id="home" class="hero-area home-bck">
@@ -43,14 +46,22 @@
         </section>
         <section id="about" class="">
             <div class="container">
-                <div class="columns">
-                    <div class="column is-11-desktop has-text-white">
+                <div class="columns is-centered">
+                    <div class="column is-2">
+                        <figure class="image is-128x128">
+                            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                        </figure>
+                    </div>
+                    <div class="column is-5  has-text-white">
                         <p class=''>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae obcaecati dolores odio dolorem quisquam minima animi? Eveniet ex labore aliquid nemo quisquam, temporibus est minima voluptatem architecto sequi autem exercitationem.</p>
                     </div>
+
                 </div>
             </div>
         </section>
         </main>
-      <script src="script.js"></script>
-      </body>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>    
+        <script src="script.js"></script>
+    </body>
   </html>
