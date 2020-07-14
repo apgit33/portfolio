@@ -53,13 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-window.onload = () => {
-    // Ecouteur d'évènement sur scroll
-    window.addEventListener("scroll", () => {
-
-    })
-}
-
 particlesJS("particles-js", 
     {
         "particles":
@@ -69,7 +62,7 @@ particlesJS("particles-js",
             "shape":{"type":"circle"},
             "opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},
             "size":{"value":7.5,"random":true,"anim":{"enable":true,"speed":5,"size_min":0.1,"sync":false}},
-            "line_linked":{"enable":true,"distance":166.6902811231592,"color":"#ffffff","opacity":1,"width":1.5},
+            "line_linked":{"enable":true,"distance":166.6902811231592,"color":"#ffffff","opacity":0.4,"width":1},
             "move":
             {
                 "enable":true,"speed":2,"direction":"none","random":false,
