@@ -192,19 +192,22 @@
                 <h2 class="title has-text-white title-menu">Contactez-moi !</h2>
                 <div class="columns is-vcentered is-centered p-50">
                     <div class="column">
-                        <form action="" method="post">
+                        <div id="send_email"></div>
+                        <form action="" method="post" id="form-contact">
                             <div class="field is-grouped">
                                 <div class="control  has-icons-left">
                                     <input class="input" type="text" placeholder="Nom" name="first-name">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user"></i>          
                                     </span>
+                                    <div id="er_first_name"></div>
                                 </div>
                                 <div class="control  has-icons-left">
                                     <input class="input" type="text" placeholder="Prénom" name="last-name">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user"></i>          
                                     </span>
+                                    <div id="er_last_name"></div>
                                 </div>
                             </div>
                             <div class="field">
@@ -214,16 +217,19 @@
                                         <i class="far fa-envelope"></i>
                                     </span>
                                 </div>
+                                <div id="er_email"></div>
                             </div>
                             <div class="field">
                                 <div class="control">
                                     <input class="input" type="text" placeholder="Sujet" name="sujet">
                                 </div>
+                                <div id="er_sujet"></div>
                             </div>
                             <div class="field">
                                 <div class="control">
                                     <textarea class="textarea" placeholder="Message" name="message"></textarea>
                                 </div>
+                                <div id="er_message"></div>
                             </div>
                             <div class="field">
                                 <div class="control">
@@ -247,8 +253,7 @@
 
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>    
         <script src="https://kit.fontawesome.com/6c7241f45d.js" crossorigin="anonymous"></script>
-        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-        
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
         <script src="script.js"></script>
     </body>
   </html>
