@@ -89,3 +89,55 @@ particlesJS("particles-js",
             }
         },
         "retina_detect":true});
+
+
+const form = document.getElementById("form-contact");
+form.addEventListener("submit",
+    e => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        document.getElementById("er_first_name").innerHTML = "";
+        document.getElementById("er_last_name").innerHTML = "";
+        document.getElementById("er_email").innerHTML = "";
+        document.getElementById("er_sujet").innerHTML="";
+        document.getElementById("er_message").innerHTML="";
+        fetch('treatment/contact.php', {
+            body: formData,
+            method: "post"
+        })
+        .then(response => response.json())
+        .then(datas => {
+            if(datas.validation==true) {
+                location.href='#contact';
+                form.reset();
+                datas.erreurs.forEach((data) => {
+                    if(data.mail) {
+                        document.getElementById("send_email").appendChild(createField(data.mail));
+                    }
+                });
+            }
+            datas.erreurs.forEach((data) => {
+                if(data.nom) {
+                    document.getElementById("er_first_name").appendChild(createField(data.nom));
+                }
+                if(data.prenom) {
+                    document.getElementById("er_last_name").appendChild(createField(data.prenom));
+                }
+                if(data.email) {
+                    document.getElementById("er_email").appendChild(createField(data.email));
+                }
+                if(data.sujet) {
+                    document.getElementById("er_sujet").appendChild(createField(data.sujet));
+                }
+                if(data.message) {
+                    document.getElementById("er_message").appendChild(createField(data.message));
+                }
+            });
+        });
+    });
+
+    function createField($name) {
+        let champ = document.createElement("p");
+        champ.innerHTML = $name;
+        return champ;
+    }
