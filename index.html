@@ -69,7 +69,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title ">PHP</h3>
                                 <figure class="image is-128x128">
-                                    <img class ="" src="/img/php.svg">
+                                    <img class ="" src="img/php.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -79,7 +79,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">MYSQL</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/mysql.svg">
+                                    <img  class ="" src="img/mysql.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -89,7 +89,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">HTML</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/html.svg">
+                                    <img  class ="" src="img/html.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -99,7 +99,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">CSS</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/css.svg">
+                                    <img  class ="" src="img/css.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -109,7 +109,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">JAVASCRIPT</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/js.svg">
+                                    <img  class ="" src="img/js.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -119,7 +119,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">GITHUB</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/github.svg">
+                                    <img  class ="" src="img/github.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -129,7 +129,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">GIT</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/git.svg">
+                                    <img  class ="" src="img/git.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -139,7 +139,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">LINUX</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/linux.svg">
+                                    <img  class ="" src="img/linux.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -149,7 +149,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">VAGRANT</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/vagrant.svg">
+                                    <img  class ="" src="img/vagrant.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -159,7 +159,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">PHOTOSHOP</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/ps.svg">
+                                    <img  class ="" src="img/ps.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -169,7 +169,7 @@
                             <div class="skills-wrap">    
                                 <h3 class="title">ADOBE</h3>
                                 <figure class="image is-128x128">
-                                    <img  class ="" src="/img/xd.svg">
+                                    <img  class ="" src="img/xd.svg">
                                 </figure>
                             </div>
                         </div>                   
@@ -195,13 +195,13 @@
                         <form action="" method="post">
                             <div class="field is-grouped">
                                 <div class="control  has-icons-left">
-                                    <input class="input" type="text" placeholder="Nom">
+                                    <input class="input" type="text" placeholder="Nom" name="first-name">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user"></i>          
                                     </span>
                                 </div>
                                 <div class="control  has-icons-left">
-                                    <input class="input" type="text" placeholder="Prénom">
+                                    <input class="input" type="text" placeholder="Prénom" name="last-name">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user"></i>          
                                     </span>
@@ -209,7 +209,7 @@
                             </div>
                             <div class="field">
                                 <div class="control has-icons-left">
-                                    <input class="input" type="email" placeholder="Email">
+                                    <input class="input" type="email" placeholder="Email" name="email">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-envelope"></i>
                                     </span>
@@ -217,12 +217,17 @@
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <textarea class="textarea" placeholder="Message"></textarea>
+                                    <input class="input" type="text" placeholder="Sujet" name="sujet">
                                 </div>
                             </div>
                             <div class="field">
                                 <div class="control">
-                                  <button class="button is-link">Submit</button>
+                                    <textarea class="textarea" placeholder="Message" name="message"></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                  <button type="submit" class="button is-link">Submit</button>
                                 </div>
                             </div>
                         </form>
