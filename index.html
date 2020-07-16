@@ -53,8 +53,17 @@
                             <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
                         </figure>
                     </div>
-                    <div class="column is-5 has-text-white">
-                        <p class='is-size-4-tablet is-size-3-mobile'>Passionné d'informatique et plus précisément de développement, je recherche un stage dans ce domaine pour approfondir mes connaissances et découvrir ce travail au sein d'une équipe</p>
+                    <div class="column is-5">
+                        <div class="card about">
+                            <div class="card-content ">
+                                <p class="title has-text-white">
+                                    “Je ne cherche pas à connaître les réponses, je cherche à comprendre les questions.”
+                                </p>
+                                <p class="subtitle is-pulled-right has-text-white">
+                                    Confucius
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -191,18 +200,20 @@
             <div class="container" >
                 <h2 class="title has-text-white title-menu">Contactez-moi !</h2>
                 <div class="columns is-vcentered is-centered p-50">
-                    <div class="column">
+                    <div class="column is-5 is-mobile">
                         <div id="send_email"></div>
                         <form action="" method="post" id="form-contact">
-                            <div class="field is-grouped">
-                                <div class="control  has-icons-left">
+                            <div class="field">
+                                <div class="control has-icons-left">
                                     <input class="input" type="text" placeholder="Nom" name="first-name">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user"></i>          
                                     </span>
                                     <div id="er_first_name"></div>
                                 </div>
-                                <div class="control  has-icons-left">
+                            </div>
+                            <div class="field">
+                                <div class="control has-icons-left">
                                     <input class="input" type="text" placeholder="Prénom" name="last-name">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user"></i>          
@@ -232,8 +243,8 @@
                                 <div id="er_message"></div>
                             </div>
                             <div class="field">
-                                <div class="control">
-                                  <button type="submit" class="button is-link">Submit</button>
+                                <div class="buttons is-centered">
+                                    <button type="submit" class="button is-link">Envoyer</button>
                                 </div>
                             </div>
                         </form>

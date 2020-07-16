@@ -101,6 +101,7 @@ form.addEventListener("submit",
         document.getElementById("er_email").innerHTML = "";
         document.getElementById("er_sujet").innerHTML="";
         document.getElementById("er_message").innerHTML="";
+        document.getElementById("send_email").innerHTML="";
         fetch('treatment/contact.php', {
             body: formData,
             method: "post"
