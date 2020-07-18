@@ -68,8 +68,8 @@
                 </div>
                 <div class="columns is-vcentered is-centered pb-50 is-mobile">
                     <ul class="d-flex">
-                        <li><a href="https://github.com/apgit33"><span class="image is-48x48 icon icon-git"></span></a></li>
-                        <li><a href="https://www.linkedin.com/in/adrien-paturot-974b1a192/"><span class="image is-48x48 icon icon-link"></span></a></li>
+                        <li><a href="https://github.com/apgit33"><span class="image is-48x48 social-icon icon-git"></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/adrien-paturot-974b1a192/"><span class="image is-48x48 social-icon icon-link"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -194,10 +194,41 @@
         </section>
 
         <section id="portfolio" class="">
+
+            <div id="modal1" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                    <p class="modal-card-title">Natural Cach</p>
+                    <button class="delete" aria-label="close" data-target="modal1"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <figure class="image">
+                            <img src="img/portfolio/nc.png" width="361" height="240" alt="">
+                        </figure>
+                        <p>Projet de gestion de planning, de membre et de groupe d'excursion pour un site de randonée.</p>
+                        <p>Identifiant / Mot de passe : </p>
+                        <p>admin@admin.fr / admin</p>
+                        <p>test@test.fr / AZERTY1</p>
+                    </section>
+                    <footer class="modal-card-foot">
+                        <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
+                        <button class="button " data-target="modal1">Fermer</button>
+                    </footer>
+                </div>
+            </div>
             <div class="container" >
                 <h2 class="title has-text-white title-menu">Mes Projets</h2>
                 <div class="columns is-vcentered is-centered p-50">
-
+                    <div class="column style">
+                        <figure class="image">
+                            <img src="img/portfolio/nc.png" width="361" height="240" alt="">
+                            <figcaption>
+                                <h3>Natural Coach</h3>
+                                <a data-target="modal1" class="button view" >Voir le projet</a>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>
@@ -206,54 +237,64 @@
             <div class="container" >
                 <h2 class="title has-text-white title-menu">Contactez-moi !</h2>
                 <div class="columns is-vcentered is-centered p-50">
-                    <div class="column is-5 is-mobile">
-                        <div id="send_email"></div>
-                        <form action="" method="post" id="form-contact">
-                            <div class="field">
-                                <div class="control has-icons-left">
-                                    <input class="input" type="text" placeholder="Nom" name="first-name">
-                                    <span class="icon is-small is-left">
-                                        <i class="far fa-user"></i>          
-                                    </span>
-                                    <div id="er_first_name"></div>
-                                </div>
+                    <div class="column">
+
+                    </div>
+                    <div class="column">
+                        <div class="columns">
+                            <div id="loading" class="column is-2">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="spinner" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg" width="100%" height="100%"><path fill="#175213" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z" class="" ></path></svg>
                             </div>
-                            <div class="field">
-                                <div class="control has-icons-left">
-                                    <input class="input" type="text" placeholder="Prénom" name="last-name">
-                                    <span class="icon is-small is-left">
-                                        <i class="far fa-user"></i>          
-                                    </span>
-                                    <div id="er_last_name"></div>
-                                </div>
+                            <div id="loaded" class="column is-mobile">
+                                <div id="send_email"></div>
+                                <form action="" method="POST" id="form-contact">
+                                    <div class="field">
+                                        <div class="control has-icons-left">
+                                            <input class="input is-medium" type="text" placeholder="Nom" name="first-name">
+                                            <span class="icon is-small is-left">
+                                                <i class="far fa-user"></i>          
+                                            </span>
+                                            <div id="er_first_name"></div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control has-icons-left">
+                                            <input class="input is-medium" type="text" placeholder="Prénom" name="last-name">
+                                            <span class="icon is-small is-left">
+                                                <i class="far fa-user"></i>          
+                                            </span>
+                                            <div id="er_last_name"></div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control has-icons-left">
+                                            <input class="input is-medium" type="email" placeholder="Email" name="email">
+                                            <span class="icon is-small is-left">
+                                                <i class="far fa-envelope"></i>
+                                            </span>
+                                        </div>
+                                        <div id="er_email"></div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input is-medium" type="text" placeholder="Sujet" name="sujet">
+                                        </div>
+                                        <div id="er_sujet"></div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <textarea class="textarea is-medium" placeholder="Message" name="message"></textarea>
+                                        </div>
+                                        <div id="er_message"></div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="buttons is-centered">
+                                            <button type="submit" class="button is-link">Envoyer</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="field">
-                                <div class="control has-icons-left">
-                                    <input class="input" type="email" placeholder="Email" name="email">
-                                    <span class="icon is-small is-left">
-                                        <i class="far fa-envelope"></i>
-                                    </span>
-                                </div>
-                                <div id="er_email"></div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Sujet" name="sujet">
-                                </div>
-                                <div id="er_sujet"></div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <textarea class="textarea" placeholder="Message" name="message"></textarea>
-                                </div>
-                                <div id="er_message"></div>
-                            </div>
-                            <div class="field">
-                                <div class="buttons is-centered">
-                                    <button type="submit" class="button is-link">Envoyer</button>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
