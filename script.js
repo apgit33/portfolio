@@ -42,16 +42,41 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add a click event on each of them
       $navbarBurgers.forEach( e => {
         e.addEventListener('click', () => {
-          // Get the target from the "data-target" attribute
-          const target = e.dataset.target;
-          const $target = document.getElementById(target);
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
           e.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
+          getTarget(e);
         });
       });
     }
 });
+
+//Toggle the class is-active of the target attribute from e
+function getTarget(e) {
+    // Get the target from the "data-target" attribute
+    const target = e.dataset.target;
+    const $target = document.getElementById(target);
+    $target.classList.toggle('is-active');
+}
+
+const modals = document.getElementsByClassName('view');
+for (let modal of modals) {
+    modal.addEventListener('click', function(e) {
+        e.preventDefault();
+        getTarget(this);
+    });
+}
+const closeModals = document.getElementsByClassName('delete');
+for (let modal of closeModals) {
+    modal.addEventListener('click', function() {
+        getTarget(this);
+    });
+}
+
+// const closeModals = document.getElementsByClassName('delete');
+// for (let modal of closeModals) {
+//     modal.addEventListener('click', function() {
+//         getTarget(this);
+//     });
+// }
 
 particlesJS("particles-js", 
     {
@@ -90,11 +115,21 @@ particlesJS("particles-js",
         },
         "retina_detect":true});
 
+function createField($name) {
+    let champ = document.createElement("p");
+    champ.innerHTML = $name;
+    return champ;
+}
+const loading = document.getElementById("loading");
+const loaded = document.getElementById("loaded");
 
 const form = document.getElementById("form-contact");
 form.addEventListener("submit",
     e => {
         e.preventDefault();
+        loading.style.display = 'block';
+        loaded.style.display = 'none';
+
         const formData = new FormData(form);
         document.getElementById("er_first_name").innerHTML = "";
         document.getElementById("er_last_name").innerHTML = "";
@@ -104,11 +139,14 @@ form.addEventListener("submit",
         document.getElementById("send_email").innerHTML="";
         fetch('treatment/contact.php', {
             body: formData,
-            method: "post"
+            method: "POST"
         })
         .then(response => response.json())
         .then(datas => {
             if(datas.validation==true) {
+                loaded.style.display = 'block';
+                form.style.display = 'none';
+
                 location.href='#contact';
                 form.reset();
                 datas.erreurs.forEach((data) => {
@@ -118,6 +156,9 @@ form.addEventListener("submit",
                 });
             }
             datas.erreurs.forEach((data) => {
+                loading.style.display = 'none';
+                loaded.style.display = 'block';
+
                 if(data.nom) {
                     document.getElementById("er_first_name").appendChild(createField(data.nom));
                 }
@@ -137,8 +178,3 @@ form.addEventListener("submit",
         });
     });
 
-    function createField($name) {
-        let champ = document.createElement("p");
-        champ.innerHTML = $name;
-        return champ;
-    }
