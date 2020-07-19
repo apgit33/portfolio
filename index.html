@@ -23,11 +23,11 @@
                 
                 <div id="navigation" class="navbar-menu">
                     <div class="navbar-end is-uppercase is-size-5">
-                        <a href="#home" class="navbar-item ml-4">Accueil</a>
-                        <a href="#about" class="navbar-item ml-4">À propos</a>
-                        <a href="#skills" class="navbar-item ml-4">Compétences</a>
-                        <a href="#portfolio" class="navbar-item ml-4">portfolio</a>
-                        <a href="#contact" class="navbar-item ml-4">contact</a>
+                        <a href="#home" data-target="home" class="navbar-item ml-4">Accueil</a>
+                        <a href="#about" data-target="about" class="navbar-item ml-4">À propos</a>
+                        <a href="#skills" data-target="skills" class="navbar-item ml-4">Compétences</a>
+                        <a href="#portfolio" data-target="portfolio" class="navbar-item ml-4">portfolio</a>
+                        <a href="#contact" data-target="contact" class="navbar-item ml-4">contact</a>
                     </div>
                 </div>
             </nav>
@@ -213,7 +213,7 @@
                     </section>
                     <footer class="modal-card-foot">
                         <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
-                        <button class="button " data-target="modal1">Fermer</button>
+                        <button class="button closeModal" data-target="modal1">Fermer</button>
                     </footer>
                 </div>
             </div>
@@ -234,18 +234,23 @@
         </section>
 
         <section id="contact" class="">
-            <div class="container" >
-                <h2 class="title has-text-white title-menu">Contactez-moi !</h2>
-                <div class="columns is-vcentered is-centered p-50">
+            <div class="container" ><h2 class="title has-text-white title-menu pb-50">Contactez-moi !</h2>
+                <div class="columns is-vcentered is-centered pb-50 is-mobile">
+                    <ul class="d-flex">
+                        <li><a href="https://github.com/apgit33"><span class="image is-128x128 social-icon icon-git-128"></span></a></li>
+                        <li><a href="https://www.linkedin.com/in/adrien-paturot-974b1a192/"><span class="image is-128x128 social-icon icon-link-128"></span></a></li>
+                    </ul>
+                </div>
+                <div class="columns pb-50 ">
                     <div class="column">
-
+                        <div id="map"></div>
                     </div>
                     <div class="column">
-                        <div class="columns">
+                        <div class="columns is-centered h-100">
                             <div id="loading" class="column is-2">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="spinner" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg" width="100%" height="100%"><path fill="#175213" d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z" class="" ></path></svg>
                             </div>
-                            <div id="loaded" class="column is-mobile">
+                            <div id="loaded" class="column ">
                                 <div id="send_email"></div>
                                 <form action="" method="POST" id="form-contact">
                                     <div class="field">
@@ -313,5 +318,6 @@
         <script src="https://kit.fontawesome.com/6c7241f45d.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
         <script src="script.js"></script>
-    </body>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAulb-dCWPCdD3bLCdplYB1Av5O7TLbdf0&callback=initMap"></script>
+    </body> 
   </html>
