@@ -1,40 +1,18 @@
-window.addEventListener('scroll', function() {
 
-    // -- Menu --
-    // ---------------
-    //Ajout de la classe nav-bg quand au moins 100 pixel de scroll
+// -- Menu --
+// ---------------
+//Ajout de la classe nav-bg quand au moins 100 pixel de scroll
+function changeMenu() {
     let navBar = document.querySelector('nav')
-    if (document.querySelector('html').scrollTop > 100) {
+    if (window.scrollY > 100) {
         navBar.classList.add('nav-bg')
     }else {
         navBar.classList.remove('nav-bg')
     }
-
-    // -- Barre de progression --
-    // ---------------
-    // Calcul de la hauteur "utile" du document
-    let hauteur = document.documentElement.scrollHeight - window.innerHeight
-    // Récupération de la position verticale
-    let position = window.scrollY
-    // Récupération de la largeur de la fenêtre
-    let largeur = document.documentElement.clientWidth
-    // Calcul de la largeur de la barre
-    let barre = position / hauteur * largeur
-    // Modification du CSS de la barre
-    document.getElementById("progress").style.width = barre+"px"
-
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
+    changeMenu();
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Check if there are any navbar burgers
@@ -71,12 +49,12 @@ for (let modal of closeModals) {
     });
 }
 
-// const closeModals = document.getElementsByClassName('delete');
-// for (let modal of closeModals) {
-//     modal.addEventListener('click', function() {
-//         getTarget(this);
-//     });
-// }
+const closeModals2 = document.getElementsByClassName('closeModal');
+for (let modal1 of closeModals2) {
+    modal1.addEventListener('click', function() {
+        getTarget(this);
+    });
+}
 
 particlesJS("particles-js", 
     {
@@ -178,3 +156,84 @@ form.addEventListener("submit",
         });
     });
 
+
+// Initialize and add the map
+function initMap() {
+    var home = {lat: 47.2468811, lng: 5.9959248};
+    var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: home});
+   //Positionne le marker
+    var marker = new google.maps.Marker({position: home, map: map});
+}
+
+
+
+
+
+
+
+
+
+
+//Gestion de la classe is-active pour les élément  de la navbar
+const navItems = document.getElementById('navigation').firstElementChild.children,
+    navSections = new Array(navItems.length);
+    
+for (i = 0; i < navItems.length; i++)
+    navSections[i] = document.getElementById(navItems[i].dataset.target);
+const menuBarHeight = document.getElementById('navigation').offsetHeight;
+console.log(menuBarHeight);
+function isVisible(ele) {
+    const r = ele.getBoundingClientRect();
+    const h = (window.innerHeight || document.documentElement.clientHeight);
+    const w = (window.innerWidth || document.documentElement.clientWidth);
+    return (r.top <= h) && 
+        (r.top + r.height - menuBarHeight >= 0) && 
+        (r.left <= h) && 
+        (r.left + r.width >= 0);
+}
+function activateIfVisible() {
+    for (b = true, i = 0; i < navItems.length; i++) {
+        if (b && isVisible(navSections[i])) {
+            navItems[i].classList.add('is-active');
+            b = false;
+        } else 
+            navItems[i].classList.remove('is-active');
+    }
+}
+var isTicking = null;
+
+window.addEventListener('scroll', () => {
+    // -- Barre de progression --
+    // ---------------
+    // Calcul de la hauteur "utile" du document
+    let hauteur = document.documentElement.scrollHeight - window.innerHeight
+    // Récupération de la position verticale
+    let position = window.scrollY
+    // Récupération de la largeur de la fenêtre
+    let largeur = document.documentElement.clientWidth
+    // Calcul de la largeur de la barre
+    let barre = position / hauteur * largeur
+    // Modification du CSS de la barre
+    document.getElementById("progress").style.width = barre+"px"
+
+    // -- Barre de Menu --
+    changeMenu();
+
+    if (!isTicking) {
+        window.requestAnimationFrame(() => {
+            activateIfVisible();
+            isTicking = false;
+        });
+        isTicking = true;
+    }
+}, false);
+
+//smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
