@@ -39,6 +39,6 @@ if (!isset($erreurs[1])) {
     $message = str_replace("\n.", "\n..", $message);
     $messageF ="De : $email\nNom : $nom\nPrénom : $prenom\n\n$message"; 
     
-    $erreurs[]['mail'] = (mail("adrienpaturot@yahoo.fr",$sujetF,$messageF))? "<span class='success'>Email envoyé</span>":"<span class='fail'>Email non envoyé</span>";
+    $erreurs[]['mail'] = (mail("adrienpaturot@yahoo.fr",$sujetF,$messageF))? "<span class='success title'>Email envoyé</span>":"<span class='fail title'>Email non envoyé</span>";
 }
 echo json_encode(array('validation' => $validation,'erreurs' => $erreurs));
