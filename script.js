@@ -1,7 +1,7 @@
 
 // -- Menu --
 // ---------------
-//Ajout de la classe nav-bg quand au moins 100 pixel de scroll
+//Ajout de la classe nav-bg quand au moins 100 pixel de scrollé
 function changeMenu() {
     let navBar = document.querySelector('nav')
     if (window.scrollY > 100) {
@@ -11,22 +11,6 @@ function changeMenu() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    changeMenu();
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
-      $navbarBurgers.forEach( e => {
-        e.addEventListener('click', () => {
-          e.classList.toggle('is-active');
-          getTarget(e);
-        });
-      });
-    }
-});
-
 //Toggle the class is-active of the target attribute from e
 function getTarget(e) {
     // Get the target from the "data-target" attribute
@@ -35,17 +19,34 @@ function getTarget(e) {
     $target.classList.toggle('is-active');
 }
 
+changeMenu();
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+// Check if there are any navbar burgers
+if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach( e => {
+        e.addEventListener('click', () => {
+            e.classList.toggle('is-active');
+            getTarget(e);
+        });
+    });
+}
+
+const html = document.querySelector('html')
 const modals = document.getElementsByClassName('view');
 for (let modal of modals) {
     modal.addEventListener('click', function(e) {
         e.preventDefault();
         getTarget(this);
+        html.classList.toggle('is-clipped');
     });
 }
 const closeModals = document.getElementsByClassName('delete');
 for (let modal of closeModals) {
     modal.addEventListener('click', function() {
         getTarget(this);
+        html.classList.toggle('is-clipped');
     });
 }
 
@@ -53,14 +54,22 @@ const closeModals2 = document.getElementsByClassName('closeModal');
 for (let modal1 of closeModals2) {
     modal1.addEventListener('click', function() {
         getTarget(this);
+        html.classList.toggle('is-clipped');
     });
 }
 
+//Réduit le nombre de particules pour mobiles et tablettes
+let numberPart;
+if (window.matchMedia("(max-width: 767.89898px)").matches) {
+    numberPart = 10;
+}else {
+    numberPart = 40;
+}
 particlesJS("particles-js", 
     {
         "particles":
         {
-            "number":{"value":40,"density":{"enable":true,"value_area":800}},
+            "number":{"value":numberPart,"density":{"enable":true,"value_area":800}},
             "color":{"value":"#123a0f"},
             "shape":{"type":"circle"},
             "opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},
@@ -129,7 +138,8 @@ form.addEventListener("submit",
                 form.reset();
                 datas.erreurs.forEach((data) => {
                     if(data.mail) {
-                        document.getElementById("send_email").appendChild(createField(data.mail));
+                        document.getElementById("send_email").style.display='flex';
+                        document.getElementById("send_email").innerHTML=data.mail;
                     }
                 });
             }
@@ -166,22 +176,15 @@ function initMap() {
 }
 
 
-
-
-
-
-
-
-
-
 //Gestion de la classe is-active pour les élément  de la navbar
 const navItems = document.getElementById('navigation').firstElementChild.children,
     navSections = new Array(navItems.length);
     
-for (i = 0; i < navItems.length; i++)
+for (i = 0; i < navItems.length; i++) {
     navSections[i] = document.getElementById(navItems[i].dataset.target);
+}
+    
 const menuBarHeight = document.getElementById('navigation').offsetHeight;
-console.log(menuBarHeight);
 function isVisible(ele) {
     const r = ele.getBoundingClientRect();
     const h = (window.innerHeight || document.documentElement.clientHeight);
@@ -200,8 +203,20 @@ function activateIfVisible() {
             navItems[i].classList.remove('is-active');
     }
 }
-var isTicking = null;
+// smooth scroll
+for (item of navItems) {
+    item.addEventListener('click', e => {
 
+        e.preventDefault();
+        window.scroll({ 
+            behavior: 'smooth', 
+            left: 0, 
+            top: document.getElementById(e.target.dataset.target).getBoundingClientRect().top + window.scrollY 
+        });
+    });
+}
+
+var isTicking = null;
 window.addEventListener('scroll', () => {
     // -- Barre de progression --
     // ---------------
@@ -227,13 +242,3 @@ window.addEventListener('scroll', () => {
         isTicking = true;
     }
 }, false);
-
-//smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
