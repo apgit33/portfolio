@@ -180,7 +180,6 @@ body {
   color: green; }
 
 form {
-  max-width: 95%;
   margin: auto; }
   form p, form .fail {
     color: red; }
