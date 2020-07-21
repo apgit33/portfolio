@@ -60,7 +60,7 @@ for (let modal1 of closeModals2) {
 
 //Réduit le nombre de particules pour mobiles et tablettes
 let numberPart;
-if (window.matchMedia("(max-width: 767.89898px)").matches) {
+if (window.matchMedia("(max-width: 47.9937rem)").matches) {
     numberPart = 10;
 }else {
     numberPart = 40;
