@@ -124,6 +124,7 @@ form.addEventListener("submit",
         document.getElementById("er_sujet").innerHTML="";
         document.getElementById("er_message").innerHTML="";
         document.getElementById("send_email").innerHTML="";
+        document.getElementById("er_captcha").innerHTML="";
         fetch('treatment/contact.php', {
             body: formData,
             method: "POST"
@@ -161,6 +162,9 @@ form.addEventListener("submit",
                 }
                 if(data.message) {
                     document.getElementById("er_message").appendChild(createField(data.message));
+                }         
+                if(data.captcha) {
+                    document.getElementById("er_captcha").appendChild(createField(data.captcha));
                 }
             });
         });
