@@ -40,6 +40,12 @@ for (let modal of modals) {
         e.preventDefault();
         getTarget(this);
         html.classList.toggle('is-clipped');
+        bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: true,
+        });
     });
 }
 const closeModals = document.getElementsByClassName('delete');
@@ -246,3 +252,8 @@ window.addEventListener('scroll', () => {
         isTicking = true;
     }
 }, false);
+
+
+
+
+

@@ -225,8 +225,7 @@ figure {
   mask: url(img/linkedin128.png); }
 
 .style figure {
-  max-width: 22.5625rem;
-  margin: auto;
+  max-width: 400px;
   overflow: hidden;
   position: relative;
   border-radius: 1.875rem; }
@@ -302,5 +301,13 @@ footer {
 
   .navbar.nav-bg {
     padding: 0; } }
+.carousel {
+  overflow: hidden; }
+  .carousel .slider-navigation-next {
+    right: 6px; }
+  .carousel .slider-navigation-previous {
+    left: 6px; }
+  .carousel .slider-page {
+    background-color: #175213 !important; }
 
 /*# sourceMappingURL=default.css.map */

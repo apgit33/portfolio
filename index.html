@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Paturot Adrien - Web Développeur</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="default.css">
 </head>
 <body >
@@ -202,9 +203,25 @@
                     <button class="delete" aria-label="close" data-target="modal1"></button>
                     </header>
                     <section class="modal-card-body">
-                        <figure class="image">
-                            <img src="img/portfolio/nc.png" width="361" height="240" alt="">
-                        </figure>
+                    <!-- Start Carousel -->
+                    <div id="carousel-demo" class="carousel">
+                        <div class="item-1">
+                            <figure class="image">
+                                <img src="img/portfolio/nc-1.PNG" width="361" height="240" alt="">
+                            </figure>
+                        </div>
+                        <div class="item-2">
+                            <figure class="image">
+                                <img src="img/portfolio/nc-2.PNG" width="361" height="240" alt="">
+                            </figure>				
+                        </div>
+                        <div class="item-3">
+                            <figure class="image">
+                                <img src="img/portfolio/nc-3.PNG" width="361" height="240" alt="">
+                            </figure>					
+                        </div>
+                    </div>
+                    <!-- End Carousel -->
                         <p>Projet de gestion de planning, de membre et de groupe d'excursion pour un site de randonée.</p>
                         <p>Identifiant / Mot de passe : </p>
                         <p>admin@admin.fr / admin</p>
@@ -221,9 +238,10 @@
                 <div class="columns is-vcentered is-centered pt-50">
                     <div class="column style">
                         <figure class="image">
-                            <img src="img/portfolio/nc.png" width="361" height="240" alt="">
+                            <img src="img/portfolio/nc-2.png"  alt="">
                             <figcaption>
                                 <h3>Natural Coach</h3>
+                                <span class="projet_cat">Développement web</span>
                                 <a data-target="modal1" class="button view" >Voir le projet</a>
                             </figcaption>
                         </figure>
@@ -317,11 +335,12 @@
                     <p>©2020 - Réalisé par Adrien Paturot</p>
                 </div>
             </div>
-          </footer>
+        </footer>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>    
         <script src="https://kit.fontawesome.com/6c7241f45d.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
         <script src="script.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=YourApiKey&callback=initMap"></script>
     </body> 
