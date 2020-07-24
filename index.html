@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="default.css">
 </head>
-<body >
+<body>
     <div id="particles-js"></div>
     <header>
         <div id="progress"></div>
@@ -32,7 +32,7 @@
                 </div>
             </nav>
     </header>
-    <main>
+    <main class="close-main">
         <section id="home" class="hero-area home-bck">
             <div class="container">
                 <div class="columns">
@@ -195,29 +195,50 @@
         </section>
 
         <section id="portfolio" class="pt-50">
-            <div id="modal1" class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                    <p class="modal-card-title">Natural Cach</p>
-                    <button class="delete" aria-label="close" data-target="modal1"></button>
-                    </header>
-                    <section class="modal-card-body">
+            <div class="container" >
+                <h2 class="title has-text-white title-menu pt-50">Mes Projets</h2>
+                <div class="columns is-vcentered is-centered pt-50">
+                    <div class="column style">
+                        <figure class="image">
+                            <img src="img/portfolio/excursion/1.png"  alt="">
+                            <figcaption>
+                                <h3>Natural Coach</h3>
+                                <span class="projet_cat">Développement web</span>
+                                <a data-target="modal1" class="button view" >Voir le projet</a>
+                            </figcaption>
+                        </figure>
+                    </div>    
+                    <div class="column style">
+                        <figure class="image">
+                            <img src="img/portfolio/portfolio/1.png"  alt="">
+                            <figcaption>
+                                <h3>Portfolio</h3>
+                                <span class="projet_cat">Développement web</span>
+                                <a data-target="modal2" class="button view" >Voir le projet</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div id="pageslide" class="close-projet">
+                <div id="modal1" class="projet_slide">
+                    <h3 class="">Natural Coach</h3>
+                    <button class="delete" data-target="modal1"></button>
                     <!-- Start Carousel -->
-                    <div id="carousel-demo" class="carousel">
+                    <div id="carousel-modal1" class="carousel">
                         <div class="item-1">
                             <figure class="image">
-                                <img src="img/portfolio/nc-1.PNG" width="361" height="240" alt="">
+                                <img src="img/portfolio/excursion/nc-1.PNG" width="361" height="240" alt="">
                             </figure>
                         </div>
                         <div class="item-2">
                             <figure class="image">
-                                <img src="img/portfolio/nc-2.PNG" width="361" height="240" alt="">
+                                <img src="img/portfolio/excursion/nc-2.PNG" width="361" height="240" alt="">
                             </figure>				
                         </div>
                         <div class="item-3">
                             <figure class="image">
-                                <img src="img/portfolio/nc-3.PNG" width="361" height="240" alt="">
+                                <img src="img/portfolio/excursion/nc-3.PNG" width="361" height="240" alt="">
                             </figure>					
                         </div>
                     </div>
@@ -226,26 +247,35 @@
                         <p>Identifiant / Mot de passe : </p>
                         <p>admin@admin.fr / admin</p>
                         <p>test@test.fr / AZERTY1</p>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
-                        <button class="button closeModal" data-target="modal1">Fermer</button>
-                    </footer>
+                    <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
+                    <button class="button closeModal" data-target="modal1">Fermer</button>
                 </div>
-            </div>
-            <div class="container" >
-                <h2 class="title has-text-white title-menu pt-50">Mes Projets</h2>
-                <div class="columns is-vcentered is-centered pt-50">
-                    <div class="column style">
-                        <figure class="image">
-                            <img src="img/portfolio/nc-2.png"  alt="">
-                            <figcaption>
-                                <h3>Natural Coach</h3>
-                                <span class="projet_cat">Développement web</span>
-                                <a data-target="modal1" class="button view" >Voir le projet</a>
-                            </figcaption>
-                        </figure>
+                <div id="modal2" class="projet_slide">
+                    <h3 class="">Natural Coach</h3>
+                    <button class="delete" data-target="modal2"></button>
+                    <!-- Start Carousel -->
+                    <div id="carousel-modal2" class="carousel">
+                        <div class="item-1">
+                            <figure class="image">
+                                <img src="img/portfolio/portfolio/p-1.png" width="361" height="240" alt="">
+                            </figure>
+                        </div>
+                        <div class="item-2">
+                            <figure class="image">
+                                <img src="img/portfolio/portfolio/p-1.png" width="361" height="240" alt="">
+                            </figure>				
+                        </div>
+                        <div class="item-3">
+                            <figure class="image">
+                                <img src="img/portfolio/portfolio/p-1.png" width="361" height="240" alt="">
+                            </figure>					
+                        </div>
                     </div>
+                    <!-- End Carousel -->
+                        <p>Porfolio blabla</p>
+
+                    <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
+                    <button class="button closeModal" data-target="modal2">Fermer</button>
                 </div>
             </div>
         </section>

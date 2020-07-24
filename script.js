@@ -35,24 +35,51 @@ if ($navbarBurgers.length > 0) {
 
 const html = document.querySelector('html')
 const modals = document.getElementsByClassName('view');
+const slide = document.getElementById('pageslide');
+const main = document.querySelector('main');
+let slider ="";
+var carousels = bulmaCarousel.attach();
 for (let modal of modals) {
     modal.addEventListener('click', function(e) {
         e.preventDefault();
-        getTarget(this);
-        html.classList.toggle('is-clipped');
-        bulmaCarousel.attach('#carousel-demo', {
+        const target = this.dataset.target;
+        const $target = document.getElementById(target);
+        $target.classList.add('is-active');
+
+        slide.classList.remove('close-projet')
+        slide.classList.add('open-projet')
+
+        main.classList.remove('close-main');
+        main.classList.add('open-main');
+
+        let sliderTarget = "#carousel-"+target;
+        slider = bulmaCarousel.attach(sliderTarget, {
             slidesToScroll: 1,
             slidesToShow: 1,
-            loop: true,
-            autoplay: true,
+            initialSlide: 0,
+            pagination: false,
         });
+
+        html.classList.add('is-clipped');
     });
+}
+function restoreAll() {
+    // slider.reset();
+
+    slide.classList.remove('open-projet');
+    slide.classList.add('close-projet');
+
+    main.classList.remove('open-main');
+    main.classList.add('close-main');
+
+    html.classList.remove('is-clipped');
+
 }
 const closeModals = document.getElementsByClassName('delete');
 for (let modal of closeModals) {
     modal.addEventListener('click', function() {
         getTarget(this);
-        html.classList.toggle('is-clipped');
+        restoreAll();
     });
 }
 
@@ -60,7 +87,7 @@ const closeModals2 = document.getElementsByClassName('closeModal');
 for (let modal1 of closeModals2) {
     modal1.addEventListener('click', function() {
         getTarget(this);
-        html.classList.toggle('is-clipped');
+        restoreAll();
     });
 }
 
@@ -179,8 +206,8 @@ form.addEventListener("submit",
 
 // Initialize and add the map
 function initMap() {
-    var home = {lat: 47.2468811, lng: 5.9959248};
-    var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: home});
+    var home = {lat: 47.2468561, lng: 5.9962485};
+    var map = new google.maps.Map(document.getElementById('map'), {zoom: 15, center: home});
    //Positionne le marker
     var marker = new google.maps.Marker({position: home, map: map});
 }
