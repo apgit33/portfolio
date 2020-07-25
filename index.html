@@ -32,7 +32,7 @@
                 </div>
             </nav>
     </header>
-    <main class="close-main">
+    <main class="open-main">
         <section id="home" class="hero-area home-bck">
             <div class="container">
                 <div class="columns">
@@ -200,9 +200,9 @@
                 <div class="columns is-vcentered is-centered pt-50">
                     <div class="column style">
                         <figure class="image">
-                            <img src="img/portfolio/excursion/1.png"  alt="">
+                            <img src="img/portfolio/excursion/1.png" width="545" height="302" alt="">
                             <figcaption>
-                                <h3>Natural Coach</h3>
+                                <h3 class="">Natural Coach</h3>
                                 <span class="projet_cat">Développement web</span>
                                 <a data-target="modal1" class="button view" >Voir le projet</a>
                             </figcaption>
@@ -210,7 +210,7 @@
                     </div>    
                     <div class="column style">
                         <figure class="image">
-                            <img src="img/portfolio/portfolio/1.png"  alt="">
+                            <img src="img/portfolio/portfolio/1.png"  width="545" height="302" alt="">
                             <figcaption>
                                 <h3>Portfolio</h3>
                                 <span class="projet_cat">Développement web</span>
@@ -220,10 +220,18 @@
                     </div>
                 </div>
             </div>
-            <div id="pageslide" class="close-projet">
-                <div id="modal1" class="projet_slide">
-                    <h3 class="">Natural Coach</h3>
-                    <button class="delete" data-target="modal1"></button>
+            <div id="pageslide" class="open-projet">
+                <div id="modal1" class="projet_slide is-active">
+                    <div class="columns is-mobile is-centered">
+                        <div class="column">
+                            <h3 class="">Natural Coach</h3>
+                        </div>
+                        <div class="column is-1">
+                            <div class="buttons is-right">
+                                <button class="delete" data-target="modal1"></button>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Start Carousel -->
                     <div id="carousel-modal1" class="carousel">
                         <div class="item-1">
@@ -231,7 +239,7 @@
                                 <img src="img/portfolio/excursion/nc-1.PNG" width="361" height="240" alt="">
                             </figure>
                         </div>
-                        <div class="item-2">
+                        <!-- <div class="item-2">
                             <figure class="image">
                                 <img src="img/portfolio/excursion/nc-2.PNG" width="361" height="240" alt="">
                             </figure>				
@@ -240,13 +248,38 @@
                             <figure class="image">
                                 <img src="img/portfolio/excursion/nc-3.PNG" width="361" height="240" alt="">
                             </figure>					
-                        </div>
+                        </div> -->
                     </div>
                     <!-- End Carousel -->
-                        <p>Projet de gestion de planning, de membre et de groupe d'excursion pour un site de randonée.</p>
-                        <p>Identifiant / Mot de passe : </p>
-                        <p>admin@admin.fr / admin</p>
-                        <p>test@test.fr / AZERTY1</p>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-vertical">
+                            <div class="tile">
+                                <div class="tile is-parent is-vertical">
+                                    <article class="tile is-child notification ">
+                                        <p class="title">Description...</p>
+                                        <p class="subtitle">Top tile</p>
+                                        <div class="content">
+                                            <!-- Content -->
+                                            <p>Projet de gestion de planning, de membre et de groupe d'excursion pour un site de randonée.</p>
+                                            <p>Identifiant / Mot de passe : </p>
+                                            <p>admin@admin.fr / admin</p>
+                                            <p>test@test.fr / AZERTY1</p>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="tile is-parent">
+                                    <article class="tile is-child notification ">
+                                        <p class="title">Technologie</p>
+                                        <div class="content">
+                                            <!-- Content -->
+                                            <p>blakbakb</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
                     <button class="button closeModal" data-target="modal1">Fermer</button>
                 </div>

@@ -10,6 +10,19 @@ function changeMenu() {
         navBar.classList.remove('nav-bg')
     }
 }
+function changeBarre() {
+    // ---------------
+    // Calcul de la hauteur "utile" du document
+    let hauteur = document.documentElement.scrollHeight - window.innerHeight
+    // Récupération de la position verticale
+    let position = window.scrollY
+    // Récupération de la largeur de la fenêtre
+    let largeur = document.documentElement.clientWidth
+    // Calcul de la largeur de la barre
+    let barre = position / hauteur * largeur
+    // Modification du CSS de la barre
+    document.getElementById("progress").style.width = barre+"px"
+}
 
 //Toggle the class is-active of the target attribute from e
 function getTarget(e) {
@@ -18,8 +31,16 @@ function getTarget(e) {
     const $target = document.getElementById(target);
     $target.classList.toggle('is-active');
 }
-
+changeBarre()
 changeMenu();
+var isTicking = null;
+if (!isTicking) {
+    window.requestAnimationFrame(() => {
+        activateIfVisible();
+        isTicking = false;
+    });
+    isTicking = true;
+}
 // Get all "navbar-burger" elements
 const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 // Check if there are any navbar burgers
@@ -243,7 +264,6 @@ function activateIfVisible() {
 // smooth scroll
 for (item of navItems) {
     item.addEventListener('click', e => {
-
         e.preventDefault();
         window.scroll({ 
             behavior: 'smooth', 
@@ -253,20 +273,10 @@ for (item of navItems) {
     });
 }
 
-var isTicking = null;
+
 window.addEventListener('scroll', () => {
     // -- Barre de progression --
-    // ---------------
-    // Calcul de la hauteur "utile" du document
-    let hauteur = document.documentElement.scrollHeight - window.innerHeight
-    // Récupération de la position verticale
-    let position = window.scrollY
-    // Récupération de la largeur de la fenêtre
-    let largeur = document.documentElement.clientWidth
-    // Calcul de la largeur de la barre
-    let barre = position / hauteur * largeur
-    // Modification du CSS de la barre
-    document.getElementById("progress").style.width = barre+"px"
+    changeBarre();
 
     // -- Barre de Menu --
     changeMenu();
