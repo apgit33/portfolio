@@ -32,7 +32,7 @@
                 </div>
             </nav>
     </header>
-    <main class="open-main">
+    <main class="close-main">
         <section id="home" class="hero-area home-bck">
             <div class="container">
                 <div class="columns">
@@ -113,7 +113,7 @@
                     <div class="column grow">
                         <div class="skills">
                             <div class="skills-wrap">    
-                                <h3 class="title">CSS</h3>
+                                <h3 class="title">CSS</ >
                                 <figure class="image is-128x128">
                                     <img  class ="" src="img/css.svg">
                                 </figure>
@@ -204,7 +204,7 @@
                             <figcaption>
                                 <h3 class="">Natural Coach</h3>
                                 <span class="projet_cat">Développement web</span>
-                                <a data-target="modal1" class="button view" >Voir le projet</a>
+                                <button class="button view" data-target="modal1">Voir le projet</button>
                             </figcaption>
                         </figure>
                     </div>    
@@ -214,17 +214,17 @@
                             <figcaption>
                                 <h3>Portfolio</h3>
                                 <span class="projet_cat">Développement web</span>
-                                <a data-target="modal2" class="button view" >Voir le projet</a>
+                                <button class="button view" data-target="modal2">Voir le projet</button>
                             </figcaption>
                         </figure>
                     </div>
                 </div>
             </div>
-            <div id="pageslide" class="open-projet">
-                <div id="modal1" class="projet_slide is-active">
+            <div id="pageslide" class="close-projet">
+                <div id="modal1" class="projet_slide">
                     <div class="columns is-mobile is-centered">
                         <div class="column">
-                            <h3 class="">Natural Coach</h3>
+                            <h3 class="title">Natural Coach</h3>
                         </div>
                         <div class="column is-1">
                             <div class="buttons is-right">
@@ -239,7 +239,7 @@
                                 <img src="img/portfolio/excursion/nc-1.PNG" width="361" height="240" alt="">
                             </figure>
                         </div>
-                        <!-- <div class="item-2">
+                        <div class="item-2">
                             <figure class="image">
                                 <img src="img/portfolio/excursion/nc-2.PNG" width="361" height="240" alt="">
                             </figure>				
@@ -248,7 +248,7 @@
                             <figure class="image">
                                 <img src="img/portfolio/excursion/nc-3.PNG" width="361" height="240" alt="">
                             </figure>					
-                        </div> -->
+                        </div>
                     </div>
                     <!-- End Carousel -->
                     <div class="tile is-ancestor">
@@ -256,11 +256,12 @@
                             <div class="tile">
                                 <div class="tile is-parent is-vertical">
                                     <article class="tile is-child notification ">
-                                        <p class="title">Description...</p>
-                                        <p class="subtitle">Top tile</p>
+                                        <p class="title">Description</p>
+                                        <p class="subtitle">Dashboard</p>
                                         <div class="content">
                                             <!-- Content -->
-                                            <p>Projet de gestion de planning, de membre et de groupe d'excursion pour un site de randonée.</p>
+                                            <p>Projet de gestion de planning, de membres et de groupes d'excursion pour un site de randonée.</p>
+                                            <p>Réalisé durant la formation Access Code School</p>
                                             <p>Identifiant / Mot de passe : </p>
                                             <p>admin@admin.fr / admin</p>
                                             <p>test@test.fr / AZERTY1</p>
@@ -272,45 +273,88 @@
                                         <p class="title">Technologie</p>
                                         <div class="content">
                                             <!-- Content -->
-                                            <p>blakbakb</p>
+                                            <ul>
+                                                <li>PHP</li>
+                                                <li>MYSQL</li>
+                                                <li>JAVASCRIPT / AJAX</li>
+                                                <li>RESPONSIVE</li>
+                                                <li>BULMA</li>
+                                            </ul>
                                         </div>
                                     </article>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
-                    <button class="button closeModal" data-target="modal1">Fermer</button>
+                    <div class="buttons">
+                        <button class="button closeModal is-medium is-success" data-target="modal1"><a href="https://adrienp.promo-39.codeur.online/excursion/" >Voir le site</a></button>
+                        <button class="button closeModal is-medium" data-target="modal1">Fermer</button>
+                    </div>
                 </div>
                 <div id="modal2" class="projet_slide">
-                    <h3 class="">Natural Coach</h3>
-                    <button class="delete" data-target="modal2"></button>
+                    <div class="columns is-mobile is-centered">
+                        <div class="column">
+                            <h3 class="title">Adrien Paturot</h3>
+                        </div>
+                        <div class="column is-1">
+                            <div class="buttons is-right">
+                                <button class="delete" data-target="modal2"></button>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Start Carousel -->
                     <div id="carousel-modal2" class="carousel">
                         <div class="item-1">
                             <figure class="image">
-                                <img src="img/portfolio/portfolio/p-1.png" width="361" height="240" alt="">
+                                <img src="img/portfolio/excursion/nc-1.PNG" width="361" height="240" alt="">
                             </figure>
                         </div>
                         <div class="item-2">
                             <figure class="image">
-                                <img src="img/portfolio/portfolio/p-1.png" width="361" height="240" alt="">
+                                <img src="img/portfolio/excursion/nc-2.PNG" width="361" height="240" alt="">
                             </figure>				
                         </div>
                         <div class="item-3">
                             <figure class="image">
-                                <img src="img/portfolio/portfolio/p-1.png" width="361" height="240" alt="">
+                                <img src="img/portfolio/excursion/nc-3.PNG" width="361" height="240" alt="">
                             </figure>					
                         </div>
                     </div>
                     <!-- End Carousel -->
-                        <p>Porfolio blabla</p>
-
-                    <a href="https://adrienp.promo-39.codeur.online/excursion/" class="button is-success" >Voir le site</a>
-                    <button class="button closeModal" data-target="modal2">Fermer</button>
+                    <div class="tile is-ancestor">
+                        <div class="tile is-vertical">
+                            <div class="tile">
+                                <div class="tile is-parent is-vertical">
+                                    <article class="tile is-child notification ">
+                                        <p class="title">Description</p>
+                                        <p class="subtitle">Portfolio</p>
+                                        <div class="content">
+                                            <!-- Content -->
+                                            <p>Projet réalisé durant la formation Access Code School</p>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="tile is-parent">
+                                    <article class="tile is-child notification ">
+                                        <p class="title">Technologie</p>
+                                        <div class="content">
+                                            <!-- Content -->
+                                            <ul>
+                                                <li>JAVASCRIPT / AJAX</li>
+                                                <li>RESPONSIVE</li>
+                                                <li>BULMA</li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="button closeModal is-medium is-success" data-target="modal2"><a href="https://adrienp.promo-39.codeur.online/excursion/" >Voir le site</a></button>
+                        <button class="button closeModal is-medium" data-target="modal2">Fermer</button>
+                    </div>
                 </div>
-            </div>
         </section>
 
         <section id="contact" class="pt-50">
