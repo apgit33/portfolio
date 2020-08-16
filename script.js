@@ -263,7 +263,7 @@ function activateIfVisible() {
 }
 // smooth scroll
 for (item of navItems) {
-    item.addEventListener('click', e => {
+    item.addEventListener('click', function(e){
         e.preventDefault();
         window.scroll({ 
             behavior: 'smooth', 

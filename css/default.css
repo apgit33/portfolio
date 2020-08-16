@@ -1,14 +1,14 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'nunito-bold';
-  src: url("fonts/nunito/Nunito-Bold.eot");
-  src: local("☺"), url("fonts/nunito/Nunito-Bold.woff") format("woff"), url("fonts/nunito/Nunito-Bold.ttf") format("truetype"), url("fonts/nunito/Nunito-Bold.svg") format("svg");
+  src: url("../fonts/nunito/Nunito-Bold.eot");
+  src: local("☺"), url("../fonts/nunito/Nunito-Bold.woff") format("woff"), url("../fonts/nunito/Nunito-Bold.ttf") format("truetype"), url("../fonts/nunito/Nunito-Bold.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'nunito-regular';
-  src: url("fonts/nunito/Nunito-Regular.eot");
-  src: local("☺"), url("fonts/nunito/Nunito-Regular.woff") format("woff"), url("fonts/nunito/Nunito-Regular.ttf") format("truetype"), url("fonts/nunito/Nunito-Regular.svg") format("svg");
+  src: url("../fonts/Nunito-Regular.eot");
+  src: local("☺"), url("../fonts/nunito/Nunito-Regular.woff") format("woff"), url("../fonts/nunito/Nunito-Regular.ttf") format("truetype"), url("../fonts/nunito/Nunito-Regular.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 .d-flex {
@@ -211,18 +211,18 @@ figure {
 
 .icon-git {
   margin-right: 10px;
-  mask: url(img/github.svg); }
+  mask: url(../img/github.svg); }
 
 .icon-link {
-  mask: url(img/linkedin.svg); }
+  mask: url(../img/linkedin.svg); }
 
 .icon-git-128 {
   margin-right: 15px;
-  mask: url(img/github128.svg); }
+  mask: url(../img/github128.svg); }
 
 .icon-link-128 {
   margin-left: 15px;
-  mask: url(img/linkedin128.png); }
+  mask: url(../img/linkedin128.png); }
 
 .style figure {
   max-width: 545px;
