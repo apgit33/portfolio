@@ -56,7 +56,7 @@ if ($_POST["g-recaptcha-response"]) {
     );
 }
 
-if ($response == null && ($response->success==false)) {
+if ($response == null || ($response->success==false)) {
     $erreurs[]['captcha'] = 'Merci de cocher le captcha';
 }
 
