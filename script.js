@@ -58,11 +58,13 @@ const html = document.querySelector('html')
 const modals = document.getElementsByClassName('view');
 const slide = document.getElementById('pageslide');
 const main = document.querySelector('main');
+
 let slider ="";
 var carousels = bulmaCarousel.attach();
 for (let modal of modals) {
     modal.addEventListener('click', function(e) {
         e.preventDefault();
+        modal.setAttribute("disabled","disabled");
         const target = this.dataset.target;
         const $target = document.getElementById(target);
         $target.classList.add('is-active');
@@ -85,8 +87,7 @@ for (let modal of modals) {
     });
 }
 function restoreAll() {
-    // slider.reset();
-
+    for (let modal of modals) {modal.removeAttribute("disabled");}
     slide.classList.remove('open-projet');
     slide.classList.add('close-projet');
 
