@@ -64,7 +64,7 @@ var carousels = bulmaCarousel.attach();
 for (let modal of modals) {
     modal.addEventListener('click', function(e) {
         e.preventDefault();
-        modal.setAttribute("disabled","disabled");
+        for (let modal of modals) {modal.setAttribute("disabled","disabled");}
         const target = this.dataset.target;
         const $target = document.getElementById(target);
         $target.classList.add('is-active');
@@ -116,7 +116,7 @@ for (let modal1 of closeModals2) {
 //Réduit le nombre de particules pour mobiles et tablettes
 let numberPart;
 if (window.matchMedia("(max-width: 48.0562rem)").matches) {
-    numberPart = 10;
+    numberPart = 0;
 }else {
     numberPart = 40;
 }
@@ -266,11 +266,17 @@ function activateIfVisible() {
 for (item of navItems) {
     item.addEventListener('click', function(e){
         e.preventDefault();
+        
         window.scroll({ 
             behavior: 'smooth', 
             left: 0, 
-            top: document.getElementById(e.target.dataset.target).getBoundingClientRect().top + window.scrollY 
+            top: document.getElementById(e.target.dataset.target).getBoundingClientRect().top + window.scrollY + 15 
         });
+        if (screen.width < 1024) {
+            item.parentElement.parentElement.classList.toggle("is-active");
+            $navbarBurgers[0].classList.toggle("is-active");
+        }
+
     });
 }
 
