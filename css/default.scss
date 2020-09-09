@@ -20,6 +20,9 @@
   $color-secondary :      rgb(32, 32, 32);
   $color-white :          white;
   $color-primary-light :  rgb(34, 131, 27);
+
+  $background-skill: rgba(255, 255, 255, 0.204);
+  $background-skill-hover: rgba(255, 255, 255, 0.459);
   
   .d-flex {display: flex;}
   .jc-center {justify-content: center;}
@@ -181,9 +184,9 @@
     text-align: center;
     display: block;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.205);
+    background-color: $background-skill;
     &:hover{
-      background-color: rgba(255, 255, 255, 0.459);
+      background-color: $background-skill-hover;
     }
     h3 {
       margin-top: 50px;
@@ -238,7 +241,6 @@ figure {
   }
 }
 .icon-git {
-  margin-right: 10px;
   mask: url(../img/github.svg);
 }
 .icon-link {
@@ -390,7 +392,19 @@ button {
       color: black;
     }
   }
-}  
+} 
+
+.cv {
+  width: auto;
+  border: none;
+  color: $color-white;
+  margin: auto;
+  background-color: $background-skill;
+  &:hover{
+    background-color: $background-skill-hover;
+    color: $color-primary;
+  }
+}
 
 
 @media only screen and (max-width:1407.8976px) {

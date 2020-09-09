@@ -157,7 +157,7 @@ body {
   text-align: center;
   display: block;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.205); }
+  background-color: rgba(255, 255, 255, 0.204); }
   .skills-wrap:hover {
     background-color: rgba(255, 255, 255, 0.459); }
   .skills-wrap h3 {
@@ -201,7 +201,6 @@ figure {
     background: #175213; }
 
 .icon-git {
-  margin-right: 10px;
   mask: url(../img/github.svg); }
 
 .icon-link {
@@ -324,6 +323,16 @@ button {
     background-color: #22831b; }
     button.goto a {
       color: black; }
+
+.cv {
+  width: auto;
+  border: none;
+  color: white;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.204); }
+  .cv:hover {
+    background-color: rgba(255, 255, 255, 0.459);
+    color: #175213; }
 
 @media only screen and (max-width: 1407.8976px) {
   #pageslide.open-projet {
